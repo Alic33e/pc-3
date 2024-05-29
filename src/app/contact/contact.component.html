@@ -10,12 +10,12 @@
   <div id="header">
     <div> <a href="#"><img src="assets/img/logo.gif" alt=""></a> </div>
     <ul>
-      <li><a href="index.html"><span>Home</span></a></li>
-      <li><a href="organic.html"><span>Organic Gardening</span></a></li>
-      <li><a href="tips.html"><span>Gardening Tips &amp; Useful Links</span></a></li>
-      <li><a href="blog.html"><span>Blog</span></a></li>
-      <li><a href="about.html"><span>About</span></a></li>
-      <li class="current"><a href="contact.html"><span>Contact</span></a></li>
+      <li class="current"><a class="btn" (click)="navigateToIndex()" ><span>Home</span></a></li>
+      <li><a class="btn" (click)="navigateToOrganic()"><span>Organic Gardening</span></a></li>
+      <li><a class="btn" (click)="navigateToTips()"><span>Gardening Tips &amp; Useful Links</span></a></li>
+      <li><a class="btn" (click)="navigateToBlog()"><span>Blog</span></a></li>
+      <li><a class="btn" (click)="navigateToAbout()" ><span>About</span></a></li>
+      <li><a class="btn" (click)="navigateToContact()"><span>Contact</span></a></li>
     </ul>
   </div>
   <div class="body">

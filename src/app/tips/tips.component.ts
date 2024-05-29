@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,12 +19,26 @@ export class TipsComponent {
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
-      this.router.navigate(['/form']);
-    }
+    this.router.navigate(['/']);
   }
 
-  navigateToRegister() {
-    this.router.navigate(['/register']);
+  navigateToAbout() {
+    this.router.navigate(['/about']);
+  }
+  navigateToIndex() {
+    this.router.navigate(['/index']);
+  }
+  navigateToOrganic() {
+    this.router.navigate(['/organic']);
+  }
+
+  navigateToTips() {
+    this.router.navigate(['/tips']);
+  }
+  navigateToBlog() {
+    this.router.navigate(['/blog']);
+  }
+  navigateToContact() {
+    this.router.navigate(['/contact']);
   }
 }
