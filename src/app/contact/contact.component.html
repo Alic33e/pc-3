@@ -20,22 +20,66 @@
   </div>
   <div class="body">
     <h2>Contact</h2>
-    <h3>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.</h3>
-    <p>You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
-    <table>
-      <tr>
-        <td><b>Address</b></td>
-        <td>: 189 Lorem Ipsum Pellentes Mauris Etiam ut velit odio Proin nisi 0000</td>
-      </tr>
-      <tr>
-        <td><b>Phone Number</b></td>
-        <td>: 117-683-9187-000</td>
-      </tr>
-      <tr>
-        <td><b>Email</b></td>
-        <td>: companyemail.com</td>
-      </tr>
-    </table>
+
+
+<div class="section">
+  <div class="container">
+    <div class="field is-grouped">
+      <p class="control is-expanded">
+        <input class="input" [(ngModel)]="newTask" placeholder="DIRECCIÓN" type="text">
+      </p>
+      <p class="control is-expanded">
+        <input class="input" [(ngModel)]="newImageUrl" placeholder="Image URL" type="text">
+      </p>
+      <p class="control is-expanded">
+        <input class="input" [(ngModel)]="newDescription" placeholder="NUMERO" type="email">
+      </p>
+      <p class="control is-expanded">
+        <input class="input" [(ngModel)]="newEmail" placeholder="EMAIL" type="email">
+      </p>
+      <p class="control">
+        <button class="button is-info" (click)="addTask()">Enviar</button>
+      </p>
+    </div>
+
+    <div class="columns is-multiline">
+  <div class="column is-4" *ngFor="let task of tasks; let i = index">
+    <div class="card card-hover"> <!-- Mueve la clase card-hover aquí -->
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <!-- Para imágenes y GIFs -->
+          <img *ngIf="task.imageUrl && (task.imageUrl.endsWith('.jpg') || task.imageUrl.endsWith('.png') || task.imageUrl.endsWith('.gif'))" [src]="task.imageUrl" alt="Task Image" style="object-fit: cover;">
+
+          <!-- Para videos -->
+          <video *ngIf="task.imageUrl && task.imageUrl.endsWith('.mp4')" [src]="task.imageUrl" controls style="width: 100%; height: auto; object-fit: cover;"></video>
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <table>
+            <tr>
+              <td><b>Address</b></td>
+              <td>:</td>{{ task.text }}
+            </tr>
+            <tr>
+              <td><b>Phone Number</b></td>
+              <td>:</td>{{ task.description }}
+            </tr>
+            <tr>
+              <td><b>Email</b></td>
+              <td>:</td>{{ task.email }}
+            </tr>
+          </table>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item has-text-danger" (click)="removeTask(i)">Remove</a>
+      </footer>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
   </div>
   <div id="footer">
     <ul>
